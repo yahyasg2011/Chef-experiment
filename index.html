@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en" class="dark">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Chef Experiment | Al Khan</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <script>
+        tailwind.config = {
+            darkMode: 'class',
+            theme: { extend: { colors: { darkBg: '#0f172a', gold: '#fbbf24' } } }
+        }
+    </script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;600;700;800&display=swap');
+        body { font-family: 'Plus Jakarta Sans', sans-serif; }
+        .glass { background: rgba(30, 41, 59, 0.7); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.1); }
+    </style>
+</head>
+<body class="bg-slate-50 dark:bg-darkBg text-slate-900 dark:text-white transition-colors duration-300">
+
+    <nav class="fixed w-full z-50 px-6 py-4">
+        <div class="max-w-7xl mx-auto flex justify-between items-center glass rounded-2xl px-6 py-3">
+            <div class="text-xl font-black tracking-tighter text-gold uppercase">Chef Experiment</div>
+            <div class="hidden md:flex space-x-8 text-sm font-bold uppercase tracking-widest">
+                <a href="#menu" class="hover:text-gold transition">Menu</a>
+                <a href="#book" class="hover:text-gold transition">Reservations</a>
+            </div>
+            <button onclick="document.documentElement.classList.toggle('dark')" class="p-2 rounded-full bg-slate-800 text-gold">
+                <i class="fas fa-moon"></i>
+            </button>
+        </div>
+    </nav>
+
+    <section class="h-screen flex items-center justify-center relative overflow-hidden bg-[url('https://images.unsplash.com/photo-1514362545857-3bc16c4c7d1b?ixlib=rb-4.0.3&auto=format&fit=crop&w=2070&q=80')] bg-cover bg-center">
+        <div class="absolute inset-0 bg-black/60"></div>
+        <div class="relative z-10 text-center px-4">
+            <span class="text-gold font-bold uppercase tracking-[0.5em] mb-4 block">Al Khan, Sharjah</span>
+            <h1 class="text-6xl md:text-8xl font-black mb-6 tracking-tighter">THE CHEF<br><span class="text-gold">EXPERIMENT</span></h1>
+            <p class="text-lg text-slate-300 max-w-xl mx-auto font-light mb-8">Elevated coastal dining. Experimental flavors. Zero limits.</p>
+            <a href="#book" class="bg-gold text-black px-10 py-4 rounded-full font-black uppercase tracking-widest hover:scale-105 transition-transform inline-block">Book a Table</a>
+        </div>
+    </section>
+
+    <section id="menu" class="py-24 px-6">
+        <div class="max-w-7xl mx-auto text-center mb-16">
+            <h2 class="text-4xl font-black mb-4">Tonight's Experiment</h2>
+            <div class="h-1 w-20 bg-gold mx-auto"></div>
+        </div>
+
+        <div class="grid md:grid-cols-3 gap-8 max-w-6xl mx-auto">
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-100 dark:border-slate-800 hover:-translate-y-2 transition">
+                <img src="https://images.unsplash.com/photo-1546069901-ba9599a7e63c?auto=format&fit=crop&w=800&q=80" class="rounded-2xl mb-6 h-48 w-full object-cover">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-bold text-xl">Quinoa Fusion</h3>
+                    <span class="text-gold font-bold">AED 85</span>
+                </div>
+                <p class="text-sm text-slate-500">Fresh greens, citrus zest, and the chef's secret spice mix.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-100 dark:border-slate-800 hover:-translate-y-2 transition">
+                <img src="https://images.unsplash.com/photo-1559339352-11d035aa65de?auto=format&fit=crop&w=800&q=80" class="rounded-2xl mb-6 h-48 w-full object-cover">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-bold text-xl">Gold Ribeye</h3>
+                    <span class="text-gold font-bold">AED 210</span>
+                </div>
+                <p class="text-sm text-slate-500">24-hour aged beef served with truffle mash and gold leaf garnish.</p>
+            </div>
+            <div class="bg-white dark:bg-slate-900 rounded-3xl p-6 shadow-xl border border-slate-100 dark:border-slate-800 hover:-translate-y-2 transition">
+                <img src="https://images.unsplash.com/photo-1565299624946-b28f40a0ae38?auto=format&fit=crop&w=800&q=80" class="rounded-2xl mb-6 h-48 w-full object-cover">
+                <div class="flex justify-between items-center mb-2">
+                    <h3 class="font-bold text-xl">Saffron Risotto</h3>
+                    <span class="text-gold font-bold">AED 120</span>
+                </div>
+                <p class="text-sm text-slate-500">A local Sharjah twist on an Italian classic.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="book" class="py-24 bg-slate-100 dark:bg-slate-900/50 px-6">
+        <div class="max-w-4xl mx-auto bg-white dark:bg-slate-900 rounded-[3rem] p-12 shadow-2xl border border-slate-200 dark:border-slate-800">
+            <h2 class="text-3xl font-black mb-8 text-center uppercase tracking-widest">Reserve Your Seat</h2>
+            <form action="https://formspree.io/f/your-id" method="POST" class="space-y-6">
+                <div class="grid md:grid-cols-2 gap-6">
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-widest">Full Name</label>
+                        <input type="text" name="name" placeholder="Yahya" class="w-full px-6 py-4 rounded-2xl bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-slate-800 outline-none focus:ring-2 focus:ring-gold transition">
+                    </div>
+                    <div>
+                        <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-widest">Guests</label>
+                        <input type="number" name="guests" value="2" class="w-full px-6 py-4 rounded-2xl bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-slate-800 outline-none focus:ring-2 focus:ring-gold transition">
+                    </div>
+                </div>
+                <div>
+                    <label class="block text-xs font-bold text-slate-400 mb-2 uppercase tracking-widest">Date & Time</label>
+                    <input type="datetime-local" name="time" class="w-full px-6 py-4 rounded-2xl bg-slate-50 dark:bg-darkBg border border-slate-200 dark:border-slate-800 outline-none focus:ring-2 focus:ring-gold transition">
+                </div>
+                <button type="submit" class="w-full py-5 bg-gold text-black font-black uppercase tracking-[0.2em] rounded-2xl hover:bg-yellow-500 transition shadow-lg shadow-gold/20">Confirm Experiment</button>
+            </form>
+        </div>
+    </section>
+
+    <footer class="py-12 text-center text-slate-500 text-xs font-bold uppercase tracking-widest">
+        &copy; 2026 Chef Experiment Al Khan | Built by Yahyasg
+    </footer>
+
+</body>
+</html>
