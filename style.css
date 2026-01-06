@@ -1,0 +1,78 @@
+/* style.css */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;700;900&display=swap');
+
+:root {
+    --primary-orange: #f97316;
+    --dark-bg: #0a0a0a;
+    --card-bg: #171717;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Inter', sans-serif;
+}
+
+body {
+    background-color: var(--dark-bg);
+    color: white;
+    line-height: 1.6;
+}
+
+/* reusable components for your 3 pages */
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 2rem;
+}
+
+.orange-text {
+    color: var(--primary-orange);
+}
+
+.btn-primary {
+    background-color: var(--primary-orange);
+    color: white;
+    padding: 0.8rem 2rem;
+    border-radius: 50px;
+    text-decoration: none;
+    font-weight: 900;
+    transition: 0.3s;
+    display: inline-block;
+}
+
+.btn-primary:hover {
+    transform: scale(1.05);
+    background-color: white;
+    color: var(--primary-orange);
+}
+
+/* menu card styling (your specialty) */
+.menu-card {
+    background: var(--card-bg);
+    border: 1px solid #262626;
+    padding: 1.5rem;
+    border-radius: 20px;
+    transition: 0.3s;
+}
+
+.menu-card:hover {
+    border-color: var(--primary-orange);
+}
+
+/* form styling for contact.html */
+input, textarea {
+    width: 100%;
+    background: #111;
+    border: 1px solid #333;
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
+    margin-bottom: 1rem;
+}
+
+input:focus {
+    border-color: var(--primary-orange);
+    outline: none;
+}
