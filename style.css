@@ -1,41 +1,40 @@
 :root { 
     --orange: #f97316; 
     --white: #ffffff;
-    --text: #1a1a1a;
-    --light-gray: #f9f9f9;
+    --black: #000000;
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-body { background: var(--white); color: var(--text); line-height: 1.6; }
+body { background: var(--white); color: var(--black); }
 
-/* navbar - links turn orange */
+/* navbar - links orange on hover */
 .navbar { 
     display: flex; justify-content: space-between; padding: 20px 8%; 
-    background: var(--white); border-bottom: 1px solid #eee; position: sticky; top: 0; z-index: 1000;
+    background: var(--white); border-bottom: 1px solid #eee;
 }
 .logo { font-size: 24px; font-weight: 900; }
 .logo span { color: var(--orange); }
-.nav-links a { color: var(--text); text-decoration: none; margin-left: 20px; font-weight: 700; transition: 0.3s; }
+.nav-links a { color: var(--black); text-decoration: none; margin-left: 20px; font-weight: 700; transition: 0.3s; }
 .nav-links a:hover, .nav-links a.active { color: var(--orange); }
 
-/* hero - using background.jpg */
+/* hero - pulls your background.jpg */
 .hero { 
-    height: 70vh; display: flex; flex-direction: column; align-items: center; justify-content: center; 
-    text-align: center; color: white;
-    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url('background.jpg'); 
-    background-size: cover; background-position: center;
+    height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center;
+    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('background.jpg');
+    background-size: cover; background-position: center; color: white;
 }
-.hero h1 { font-size: clamp(40px, 8vw, 80px); font-weight: 900; text-transform: uppercase; }
+.hero h1 { font-size: 60px; font-weight: 900; line-height: 1; text-transform: uppercase; }
+.orange { color: var(--orange); }
 
-/* menu grid 2-columns */
-.container { max-width: 1100px; margin: 0 auto; padding: 40px 20px; }
-.section-tag { color: var(--orange); text-transform: uppercase; font-size: 14px; margin: 40px 0 20px; font-weight: 900; border-left: 4px solid var(--orange); padding-left: 10px; }
-.app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; }
-.app-card { background: var(--white); border: 1px solid #eee; border-radius: 12px; overflow: hidden; box-shadow: 0 4px 10px rgba(0,0,0,0.03); }
-.app-card img { width: 100%; height: 130px; object-fit: cover; }
-.app-info { padding: 12px; }
-.app-info h3 { font-size: 13px; margin-bottom: 5px; color: var(--text); }
-.app-info span { color: var(--orange); font-weight: 900; font-size: 15px; }
+/* buttons */
+.btn { padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; margin: 10px; transition: 0.3s; }
+.primary { background: var(--orange); color: white; }
+.secondary { background: white; color: var(--black); }
 
-/* map fix */
-.map-wrapper iframe { width: 100%; border-radius: 15px; border: 1px solid #eee; height: 350px; }
+/* menu grid - 2 columns */
+.app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px; }
+.app-card { border: 1px solid #eee; border-radius: 15px; overflow: hidden; }
+.app-card img { width: 100%; height: 120px; object-fit: cover; }
+.app-info { padding: 10px; }
+.app-info h3 { font-size: 13px; margin-bottom: 5px; }
+.app-info span { color: var(--orange); font-weight: 900; }
