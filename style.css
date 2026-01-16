@@ -2,25 +2,30 @@
     --orange: #f97316; 
     --white: #ffffff;
     --black: #000000;
+    --bg-dark: #0a0a0a; /* new background color */
+    --card-dark: #1a1a1a; /* new card color */
 }
 
 * { margin: 0; padding: 0; box-sizing: border-box; font-family: 'Inter', sans-serif; }
-body { background: var(--white); color: var(--black); }
 
-/* navbar - links orange on hover */
+/* forced dark mode background */
+body { background: var(--bg-dark) !important; color: var(--white) !important; }
+
+/* navbar - made it transparent/dark to match the vibe */
 .navbar { 
     display: flex; justify-content: space-between; padding: 20px 8%; 
-    background: var(--white); border-bottom: 1px solid #eee;
+    background: var(--bg-dark); border-bottom: 1px solid #222;
 }
-.logo { font-size: 24px; font-weight: 900; }
+.logo { font-size: 24px; font-weight: 900; color: var(--white); }
 .logo span { color: var(--orange); }
-.nav-links a { color: var(--black); text-decoration: none; margin-left: 20px; font-weight: 700; transition: 0.3s; }
+
+.nav-links a { color: var(--white); text-decoration: none; margin-left: 20px; font-weight: 700; transition: 0.3s; }
 .nav-links a:hover, .nav-links a.active { color: var(--orange); }
 
-/* hero - pulls your background.jpg */
+/* hero - darkened for better contrast */
 .hero { 
     height: 80vh; display: flex; align-items: center; justify-content: center; text-align: center;
-    background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('background.jpg');
+    background: linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)), url('background.jpg');
     background-size: cover; background-position: center; color: white;
 }
 .hero h1 { font-size: 60px; font-weight: 900; line-height: 1; text-transform: uppercase; }
@@ -29,12 +34,12 @@ body { background: var(--white); color: var(--black); }
 /* buttons */
 .btn { padding: 12px 30px; border-radius: 50px; text-decoration: none; font-weight: 700; display: inline-block; margin: 10px; transition: 0.3s; }
 .primary { background: var(--orange); color: white; }
-.secondary { background: white; color: var(--black); }
+.secondary { background: var(--white); color: var(--black); }
 
-/* menu grid - 2 columns */
+/* menu grid - updated for dark cards */
 .app-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 15px; padding: 20px; }
-.app-card { border: 1px solid #eee; border-radius: 15px; overflow: hidden; }
+.app-card { border: 1px solid #222; background: var(--card-dark); border-radius: 15px; overflow: hidden; }
 .app-card img { width: 100%; height: 120px; object-fit: cover; }
 .app-info { padding: 10px; }
-.app-info h3 { font-size: 13px; margin-bottom: 5px; }
+.app-info h3 { font-size: 13px; margin-bottom: 5px; color: var(--white); }
 .app-info span { color: var(--orange); font-weight: 900; }
